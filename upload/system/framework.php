@@ -191,12 +191,16 @@ foreach ($config->get('action_pre_action') as $pre_action) {
 
 	// If action can not be executed then we return an action error object.
 	if ($result instanceof \Exception) {
+
 		$action = $error;
 
 		$error = '';
 		break;
 	}
 }
+
+
+
 
 // Route
 if (!$action) {
@@ -206,6 +210,8 @@ if (!$action) {
 		$action = new \Opencart\System\Engine\Action($config->get('action_default'));
 	}
 }
+
+
 
 // Dispatch
 while ($action) {

@@ -42,3 +42,5 @@
 
 /.idea
 /upload/.idea
+Dockerfile
+docker-compose.yml

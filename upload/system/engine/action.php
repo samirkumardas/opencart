@@ -29,8 +29,10 @@ class Action {
 		if ($pos === false) {
 			$this->class  = 'Controller\\' . str_replace(['_', '/'], ['', '\\'], ucwords($this->route, '_/'));
 			$this->method = 'index';
+            // echo '==' . $this->class;
 		} else {
 			$this->class  = 'Controller\\' . str_replace(['_', '/'], ['', '\\'], ucwords(substr($this->route, 0, $pos), '_/'));
+           
 			$this->method = substr($this->route, $pos + 1);
 		}
 	}
